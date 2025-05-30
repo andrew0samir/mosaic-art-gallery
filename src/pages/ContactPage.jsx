@@ -17,6 +17,10 @@ function ContactPage() {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
+    setFormData({name: "",
+        email: "",
+        phone: "",
+        message: ""})
   };
 
   return (
