@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Carousel from "./Carousel";
 
 function HeroSection() {
@@ -8,6 +7,7 @@ function HeroSection() {
     { src: "splash1.jpg" },
     { src: "splash2.jpg" },
     { src: "splash3.jpg" },
+    { src: "splash4.jpg" },
   ];
 
   return (
@@ -16,20 +16,21 @@ function HeroSection() {
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[#14274E] mb-4 sm:mb-8">
           Mosaic Art Gallery
         </h1>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center pb-6">
           <button
             onClick={() => navigate("/gallery")}
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-300 bg-opacity-20 backdrop-blur-lg rounded-lg text-black hover:bg-opacity-30 transition duration-300 flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#14274E] hover:bg-[#374b74]  text-white rounded-lg transition duration-300 cursor-pointer"
           >
-            View Gallery <ArrowRightIcon className="w-5 h-5" />
+            View Gallery &rarr;
           </button>
           <button
             onClick={() => navigate("/contact")}
-            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-blue-600 bg-opacity-80 backdrop-blur-lg rounded-lg text-white hover:bg-opacity-100 transition duration-300"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-[#14274E] hover:bg-[#374b74] text-white rounded-lg transition duration-300 cursor-pointer"
           >
             Contact Artist
           </button>
         </div>
+        {/* update the images prop with the real images data */}
         <Carousel imagesArr={images} />
       </div>
     </section>

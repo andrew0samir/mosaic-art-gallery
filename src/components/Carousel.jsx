@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 function Carousel({ imagesArr }) {
   // Slider settings for infinite carousel
   const sliderSettings = {
+    arrows: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -39,7 +40,7 @@ function Carousel({ imagesArr }) {
   };
 
   return (
-    <Slider {...sliderSettings} className="my-10 py-2 max-w-xl">
+    <Slider {...sliderSettings} className="my-10 py-2 w-8xl">
       {imagesArr.map((img) => (
         <div>
           <h3>
@@ -47,6 +48,7 @@ function Carousel({ imagesArr }) {
               src={img.src}
               alt="image"
               className="w-full h-[10rem]"
+              loading="lazy"
             />
           </h3>
         </div>
