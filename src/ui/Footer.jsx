@@ -98,7 +98,7 @@ function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white border-opacity-10 text-center">
           <p className="text-blue-200">
-            &copy; {new Date().getFullYear()} Mosaic Art Gallery. All rights
+            &copy; {new Date().getFullYear()} Mosaic Art <Link to="admin">Gallery</Link> . All rights
             reserved.
           </p>
         </div>

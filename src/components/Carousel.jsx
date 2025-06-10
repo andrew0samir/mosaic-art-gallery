@@ -41,12 +41,12 @@ function Carousel({ imagesArr }) {
 
   return (
     <Slider {...sliderSettings} className="my-10 py-2 w-8xl">
-      {imagesArr.map((img) => (
-        <div>
+      {imagesArr.map((img, index) => (
+        <div key={index}>
           <h3>
             <img
               src={img.src}
-              alt="image"
+              alt={img.alt || "Gallery image"}
               className="w-full h-[10rem]"
               loading="lazy"
             />

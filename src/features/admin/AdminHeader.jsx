@@ -21,10 +21,10 @@ function AdminHeader() {
   // Get the current page title based on the path
 
   return (
-    <header className="p-4 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between bg-white dark:bg-gray-800 shadow-sm">
+    <header className="p-4 border-b border-gray-200 flex items-center justify-between bg-gray-700 shadow-sm">
       <div className="flex items-center space-x-3">
-        <h2 className="font-semibold text-lg dark:text-white">
-          Admin Dashboard
+        <h2 className="font-semibold text-lg text-white">
+          Welcome Admin
         </h2>
       </div>
       <div>
