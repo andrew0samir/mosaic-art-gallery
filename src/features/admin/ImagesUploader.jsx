@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDatabase } from "../../context/DatabaseContext";
+import { DBServiceApi } from "../../services/DBServiceApi";
 
 function ImagesUploader() {
   const { dispatch } = useDatabase();
@@ -117,16 +118,12 @@ function ImagesUploader() {
       // Create project data
       const projectData = {
         title,
-        coverImage: coverImageUrl,
-        images: projectImageUrls,
-        createdAt: new Date().toISOString(),
+        coverImageUrl,
+        imageUrls: projectImageUrls,
       };
 
-      // Update global state
-      dispatch({
-        type: "PROJECT_CREATED",
-        payload: projectData,
-      });
+      // Create project in database
+      await DBServiceApi.createNewProject(projectData, dispatch);
 
       // Show success notification
       setNotification({
@@ -135,14 +132,9 @@ function ImagesUploader() {
       });
 
       // Reset form
-      setTitle("");
-      setCoverImage(null);
-      setCoverImagePreview(null);
-      setProjectImages([]);
-      setProjectImagesPreview([]);
-      document.getElementById("coverImage").value = "";
-      document.getElementById("projectImages").value = "";
+      resetForm();
     } catch (error) {
+      console.error("Error creating project:", error);
       dispatch({
         type: "ERROR",
         payload: error.message,
@@ -154,6 +146,16 @@ function ImagesUploader() {
     } finally {
       setIsLoading(false);
     }
+  }
+
+  function resetForm() {
+    setTitle("");
+    setCoverImage(null);
+    setCoverImagePreview(null);
+    setProjectImages([]);
+    setProjectImagesPreview([]);
+    document.getElementById("coverImage").value = "";
+    document.getElementById("projectImages").value = "";
   }
 
   return (
@@ -250,7 +252,7 @@ function ImagesUploader() {
         <button
           type="submit"
           disabled={isLoading}
-          className={`w-full py-3 px-6 rounded-lg text-white font-semibold transition-all ${
+          className={`w-full py-3 px-6 rounded-lg text-white font-semibold transition-all cursor-pointer ${
             isLoading
               ? "bg-blue-400 cursor-not-allowed"
               : "bg-blue-500 hover:bg-blue-600 active:bg-blue-700"

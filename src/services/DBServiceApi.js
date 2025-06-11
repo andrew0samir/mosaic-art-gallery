@@ -1,4 +1,4 @@
-import { getDatabase, ref, push, set, get, child } from 'firebase/database';
+import { ref, push, set, get, child } from 'firebase/database';
 import { database } from '../config/firebase-config';
 
 export class DBServiceApi {
@@ -14,7 +14,6 @@ export class DBServiceApi {
             const project = {
                 id: newProjectRef.key,
                 title: projectData.title,
-                description: projectData.description,
                 imageUrls: projectData.imageUrls, // Expect URLs directly from your image hosting service
                 coverImageUrl: projectData.coverImageUrl, // Expect URL directly from your image hosting service
                 createdAt: new Date().toISOString()
