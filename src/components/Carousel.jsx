@@ -48,7 +48,6 @@ function Carousel({ imagesArr }) {
               src={img.src}
               alt={img.alt || "Gallery image"}
               className="w-full h-[10rem]"
-              loading="lazy"
             />
           </h3>
         </div>

@@ -34,7 +34,7 @@ function AdminHeader() {
           </Link>
         </div>
         <div>
-          <Link to="/admin/dashboard">
+          <Link to="/admin/edit">
             <button className="bg-blue-500 text-white py-2 px-6 rounded-xl cursor-pointer">
               Edit &rarr;
             </button>

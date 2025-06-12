@@ -11,7 +11,7 @@ function HeroSection() {
   ];
 
   return (
-    <section className="relative h-dvh flex items-center justify-center px-4 py-16 my-10 sm:py-0 bg-[url(waves.jpg)] bg-cover bg-center">
+    <section className="relative h-dvh flex items-center justify-center px-4 py-16 my-10 sm:py-0 bg-[url(splash3.jpg)] bg-cover bg-center">
       <div className="text-center z-10 max-w-[90%] sm:max-w-2xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-[#14274E] mb-4 sm:mb-8">
           Mosaic Art Gallery

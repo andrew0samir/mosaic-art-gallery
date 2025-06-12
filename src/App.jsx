@@ -27,7 +27,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route path="/admin/dashboard" element={<AdminEditDashboard />} />
+            <Route path="/admin/edit" element={<AdminEditDashboard />} />
             <Route index element={<Dashboard />} />
           </Route>
           <Route path="/" element={<MainLayout />}>

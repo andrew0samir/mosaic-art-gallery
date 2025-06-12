@@ -4,7 +4,7 @@ function BlogSection() {
   const [images] = useState([1, 2, 3]);
 
   return (
-    <section className="py-12 sm:py-20 px-4 bg-[url(splash3.jpg)] bg-cover bg-center">
+    <section className="py-12 sm:py-20 px-4 ">
       <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-12">
         Latest ArtWorks
       </h2>
@@ -18,7 +18,6 @@ function BlogSection() {
               src={`splash2.jpg`}
               alt={`Blog ${item}`}
               className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4 group-hover:-translate-y-2 transition duration-500"
-              loading="lazy"
             />
             <div className="flex justify-between items-center mb-2 ">
               <h3 className="text-lg sm:text-xl font-semibold text-white ">

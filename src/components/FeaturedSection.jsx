@@ -1,6 +1,6 @@
 function FeaturedSection() {
   return (
-    <section className="py-12 lg:my-24 sm:py-20 px-4 bg-[url(splash3.jpg)] bg-cover bg-center">
+    <section className="py-12 lg:my-24 sm:py-20 px-4">
       <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-12">
         Featured Artworks
       </h2>
@@ -13,7 +13,6 @@ function FeaturedSection() {
                   src={`splash1.jpg`}
                   alt={`Artwork ${item}`}
                   className="w-full h-48 sm:h-64 object-cover rounded-lg mb-4"
-                  loading="lazy"
                 />
               </div>
             </div>

@@ -4,7 +4,7 @@ function AboutSection() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-12 sm:py-20 px-4 bg-[url(splash3.jpg)] bg-cover bg-center">
+    <section className="py-12 sm:py-20 px-4 ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
         <div className="relative order-2 lg:order-1">
           <div className="absolute inset-0 bg-[#F1F6F9] rounded-xl transform -rotate-4"></div>
@@ -12,7 +12,6 @@ function AboutSection() {
             src="splash4.jpg"
             alt="Artist at work"
             className="relative rounded-xl w-full h-[400px] sm:h-[600px] object-cover"
-            loading="lazy"
           />
         </div>
         <div className=" backdrop-blur-2xl rounded-xl p-8 sm:p-8 order-1 lg:order-2 border border-gray-100">
