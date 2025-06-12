@@ -45,7 +45,7 @@ function GalleryPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-200 via-blue-400 to-blue-200 py-16 sm:py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-indigo-400 via-emerald-300 to-sky-500 py-16 mt-5 sm:py-20 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Gallery Header */}
         <motion.div

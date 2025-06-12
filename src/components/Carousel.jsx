@@ -6,6 +6,7 @@ function Carousel({ imagesArr }) {
   // Slider settings for infinite carousel
   const sliderSettings = {
     arrows: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

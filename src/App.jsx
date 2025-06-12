@@ -10,7 +10,7 @@ import ProtectedRoute from "./ui/ProtectedRoute";
 import AdminLayout from "./features/admin/AdminLayout";
 import AdminLogin from "./features/auth/AdminLogin";
 import Dashboard from "./features/admin/Dashboard";
-import AdminEditDashboard from "./features/admin/AdminEditDashboard";
+import AdminDashboard from "./features/admin/AdminDashboard";
 import { DatabaseProvider } from "./context/DatabaseContext";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
               </ProtectedRoute>
             }
           >
-            <Route path="/admin/edit" element={<AdminEditDashboard />} />
+            <Route path="/admin/edit" element={<AdminDashboard />} />
             <Route index element={<Dashboard />} />
           </Route>
           <Route path="/" element={<MainLayout />}>
