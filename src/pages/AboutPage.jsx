@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-sky-500 from-20% via-cyan-500 via-50% to-emerald-500 to-70% py-20 px-4">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto mb-16 sm:mb-20">
         <motion.h1
