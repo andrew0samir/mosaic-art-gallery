@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,14 +14,34 @@ function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-    setFormData({name: "",
-        email: "",
-        phone: "",
-        message: ""})
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    // Remeber to change this with the key
+    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
+      setFormData({ name: "", email: "", phone: "", message: "" });
+      console.log("Success", res);
+      Swal.fire({
+        title: "Good job!",
+        text: "You clicked the button!",
+        icon: "success",
+      });
+    }
   };
 
   return (
