@@ -5,15 +5,13 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#14274E] bg-opacity-20 backdrop-blur-lg border-b border-white border-opacity-10">
-      <div className="max-w-7xl mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-sky-600 via-blue-400 to-cyan-600 shadow-lg">
+      <div className="max-w-7xl mx-auto px-4 py-6 box-border ">
         <nav className="flex items-center justify-between">
           {/* Logo */}
-          <NavLink
-            to="/"
-            className="text-2xl font-bold text-white hover:text-blue-200 transition duration-300"
-          >
-            #Mosaic
+          <NavLink to="/" className="text-2xl font-bold text-white">
+            {/* <img src="/src/assets/react.svg" alt="Logo" /> */}
+            Logo
           </NavLink>
 
           {/* Mobile Menu Button */}
@@ -40,16 +38,16 @@ function Navbar() {
 
           {/* Navigation Links */}
           <div
-            className={`${
+            className={`absolute top-full left-0 right-0 flex-col items-center space-y-4 space-x-0 text-white py-4 backdrop-blur-xl ${
               isMenuOpen ? "flex" : "hidden"
-            } lg:flex absolute lg:relative top-full left-0 right-0 lg:top-auto bg-blue-900 lg:bg-transparent bg-opacity-95 lg:bg-opacity-0 backdrop-blur-lg lg:backdrop-blur-none flex-col lg:flex-row items-center space-y-4 lg:space-y-0 space-x-0 lg:space-x-8 py-4 lg:py-0`}
+            }  sm:bg-transparent lg:flex lg:relative lg:top-auto lg:flex-row lg:space-y-0 lg:space-x-8 lg:py-0`}
           >
             <NavLink
               to="/home"
               className={({ isActive }) =>
                 `text-lg ${
-                  isActive ? "text-blue-300 font-semibold" : "text-white"
-                } hover:text-blue-200 transition duration-300`
+                  isActive ? "underline underline-offset-4 " : ""
+                } hover:underline hover:underline-offset-4 transition duration-300`
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -59,8 +57,8 @@ function Navbar() {
               to="/about"
               className={({ isActive }) =>
                 `text-lg ${
-                  isActive ? "text-blue-300 font-semibold" : "text-white"
-                } hover:text-blue-200 transition duration-300`
+                  isActive ? "underline underline-offset-4 " : ""
+                } hover:underline hover:underline-offset-4 transition duration-300`
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -70,8 +68,8 @@ function Navbar() {
               to="/gallery"
               className={({ isActive }) =>
                 `text-lg ${
-                  isActive ? "text-blue-300 font-semibold" : "text-white"
-                } hover:text-blue-200 transition duration-300`
+                  isActive ? "underline underline-offset-4 " : ""
+                } hover:underline hover:underline-offset-4 transition duration-300`
               }
               onClick={() => setIsMenuOpen(false)}
             >
@@ -81,8 +79,8 @@ function Navbar() {
               to="/contact"
               className={({ isActive }) =>
                 `text-lg ${
-                  isActive ? "text-blue-300 font-semibold" : "text-white"
-                } hover:text-blue-200 transition duration-300`
+                  isActive ? "underline underline-offset-4 " : ""
+                } hover:underline hover:underline-offset-4 transition duration-300`
               }
               onClick={() => setIsMenuOpen(false)}
             >
