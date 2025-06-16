@@ -45,14 +45,14 @@ function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-400 via-blue-600 to-blue-400 py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Contact Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8">
             Contact Me
           </h1>
-          <p className="text-xl text-gray-800 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Get in touch to discuss commissions, collaborations, or just to say
             hello.
           </p>

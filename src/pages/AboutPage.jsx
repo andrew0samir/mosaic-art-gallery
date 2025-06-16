@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-500 from-20% via-cyan-500 via-50% to-emerald-500 to-70% py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto mb-16 sm:mb-20">
         <motion.h1
@@ -47,7 +47,7 @@ function AboutPage() {
             </p>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="relative"
@@ -77,7 +77,7 @@ function AboutPage() {
             />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 sm:p-8 order-1 lg:order-2"
@@ -97,7 +97,7 @@ function AboutPage() {
         </div>
 
         {/* Section 3 */}
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 sm:p-8">
+        {/* <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 sm:p-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -141,7 +141,7 @@ function AboutPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

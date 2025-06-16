@@ -45,7 +45,7 @@ function GalleryPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-400 via-emerald-300 to-sky-500 py-16 mt-5 sm:py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Gallery Header */}
         <motion.div
@@ -56,7 +56,7 @@ function GalleryPage() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-8">
             Our Gallery
           </h1>
-          <p className="text-lg sm:text-xl text-blue-200 max-w-3xl mx-auto px-4">
+          <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">
             Explore our collection of unique mosaic artworks, each telling its
             own story through color and form.
           </p>
@@ -72,11 +72,11 @@ function GalleryPage() {
               transition={{ delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="relative overflow-hidden rounded-xl bg-white bg-opacity-10 backdrop-blur-lg p-3 sm:p-4 transition-all duration-300 hover:bg-opacity-20 hover:transform hover:scale-[1.02]">
+              <div className="relative overflow-hidden rounded-xl bg-white p-3 sm:p-4 transition-all duration-300 hover:transform hover:scale-[1.01] hover:shadow-lg">
                 <img
                   src={piece.image}
                   alt={piece.title}
-                  className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-101"
                 />
                 <div className="p-2 sm:p-4">
                   <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">
