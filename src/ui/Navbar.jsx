@@ -5,7 +5,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-sky-600 via-blue-400 to-cyan-600 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-sky-700 to-cyan-700 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-6 box-border ">
         <nav className="flex items-center justify-between">
           {/* Logo */}

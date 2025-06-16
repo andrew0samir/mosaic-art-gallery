@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-blue-900 bg-opacity-20 backdrop-blur-lg border-t border-white border-opacity-10">
+    <footer className="bg-gradient-to-r from-sky-700 to-cyan-700 ">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
@@ -11,7 +11,7 @@ function Footer() {
               to="/"
               className="text-2xl font-bold text-white hover:text-blue-200 transition duration-300"
             >
-              #Mosaic
+              Logo
             </Link>
             <p className="mt-4 text-blue-200">
               Transforming spaces through the art of mosaic, one piece at a
@@ -54,6 +54,7 @@ function Footer() {
             <div className="flex justify-center md:justify-end space-x-4">
               <a
                 href="#"
+                target="_blank"
                 className="text-blue-200 hover:text-blue-100 transition duration-300"
               >
                 <span className="sr-only">Facebook</span>
@@ -67,6 +68,7 @@ function Footer() {
               </a>
               <a
                 href="#"
+                target="_blank"
                 className="text-blue-200 hover:text-blue-100 transition duration-300"
               >
                 <span className="sr-only">Instagram</span>
@@ -80,6 +82,7 @@ function Footer() {
               </a>
               <a
                 href="#"
+                target="_blank"
                 className="text-blue-200 hover:text-blue-100 transition duration-300"
               >
                 <span className="sr-only">Twitter</span>
@@ -98,8 +101,8 @@ function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-white border-opacity-10 text-center">
           <p className="text-blue-200">
-            &copy; {new Date().getFullYear()} Mosaic Art <Link to="admin">Gallery</Link> . All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Mosaic Art{" "}
+            <Link to="admin">Gallery</Link> . All rights reserved.
           </p>
         </div>
       </div>
