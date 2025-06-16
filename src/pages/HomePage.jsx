@@ -8,11 +8,11 @@ function HomePage() {
     <div className="min-h-screen bg-gradient-to-b from-sky-500 from-20% via-cyan-500 via-50% to-emerald-500 to-70%">
       <HeroSection />
 
-      <FeaturedSection />
+      {/* <FeaturedSection />
 
       <BlogSection />
 
-      <AboutSection />
+      <AboutSection /> */}
     </div>
   );
 }
