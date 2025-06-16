@@ -5,14 +5,15 @@ import AboutSection from "../components/AboutSection";
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-500 from-20% via-cyan-500 via-50% to-emerald-500 to-70%">
+    <div className="min-h-screen  bg-linear-to-b from-cyan-600 via-sky-400 to-blue-300">
       <HeroSection />
 
-      {/* <FeaturedSection />
+      <FeaturedSection />
 
       <BlogSection />
 
-      <AboutSection /> */}
+      <AboutSection />
+      
     </div>
   );
 }

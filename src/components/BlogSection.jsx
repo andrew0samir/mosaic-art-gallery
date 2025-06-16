@@ -23,7 +23,7 @@ function BlogSection() {
               <h3 className="text-lg sm:text-xl font-semibold text-white ">
                 Art Piece Title
               </h3>
-              <button className="text-sm sm:text-base text-white md:text-gray-400 group-hover:text-gray-200 group-hover:outline px-6 py-3 rounded-xl transition duration-500 cursor-pointer">
+              <button className="text-sm sm:text-base text-white group-hover:outline px-6 py-3 rounded-xl transition duration-500 cursor-pointer">
                 Read More &rarr;
               </button>
             </div>
