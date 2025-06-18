@@ -1,30 +1,29 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDatabase } from "../context/DatabaseContext";
+import { DBServiceApi } from "../services/DBServiceApi";
+import Loader from "../ui/Loader";
 
 function GalleryItem() {
-    const { id } = useParams();
-    const navigate = useNavigate();
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const { projects, isLoading, dispatch } = useDatabase();
 
-  const [artPieces] = useState([
-    {
-      id: 1,
-      title: "Mosaic Harmony",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "A vibrant exploration of color and form",
-    },
-    {
-      id: 2,
-      title: "Urban Fragments",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Contemporary urban landscapes in mosaic",
-    },
-    {
-      id: 3,
-      title: "Natures Pattern",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Organic patterns inspired by nature",
-    },
-  ]);
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  async function loadProjects() {
+    try {
+      dispatch({ type: "LOADING" });
+      const projectsData = await DBServiceApi.getProjects();
+      dispatch({ type: "PROJECTS_LOADED", payload: projectsData });
+    } catch (error) {
+      dispatch({ type: "ERROR", payload: error.message });
+    }
+  }
+
+  if (isLoading) return <Loader />;
 
   return (
     <div>
@@ -41,17 +40,19 @@ function GalleryItem() {
           </h1>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {artPieces.map((piece) => (
-            <div key={piece.id} className="group relative">
-              <div className="relative overflow-hidden rounded-xl bg-white bg-opacity-10 backdrop-blur-lg p-3 sm:p-4 transition-all duration-300">
-                <img
-                  src={piece.image}
-                  alt={piece.title}
-                  className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4  duration-300 "
-                />
+          {projects
+            .filter((project) => project.id == id)
+            .map((piece) => (
+              <div key={piece.id} className="group relative">
+                <div className="relative overflow-hidden rounded-xl bg-white bg-opacity-10 backdrop-blur-lg p-3 sm:p-4 transition-all duration-300">
+                  <img
+                    src={piece.coverImageUrl}
+                    alt={piece.title}
+                    className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4  duration-300 "
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>

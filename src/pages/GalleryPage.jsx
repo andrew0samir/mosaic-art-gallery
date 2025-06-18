@@ -22,45 +22,7 @@ function GalleryPage() {
       dispatch({ type: "ERROR", payload: error.message });
     }
   }
-  //   // Sample art pieces data - replace with your actual data
-  //   const [artPieces] = useState([
-  //     {
-  //       id: 1,
-  //       title: "Mosaic Harmony",
-  //       image: "https://placehold.co/600x400/orange/white",
-  //       description: "A vibrant exploration of color and form",
-  //     },
-  //     {
-  //       id: 2,
-  //       title: "Urban Fragments",
-  //       image: "https://placehold.co/600x400/orange/white",
-  //       description: "Contemporary urban landscapes in mosaic",
-  //     },
-  //     {
-  //       id: 3,
-  //       title: "Natures Pattern",
-  //       image: "https://placehold.co/600x400/orange/white",
-  //       description: "Organic patterns inspired by nature",
-  //     },
-  //     {
-  //       id: 4,
-  //       title: "Abstract Flow",
-  //       image: "https://placehold.co/600x400/orange/white",
-  //       description: "Dynamic abstract composition",
-  //     },
-  //     {
-  //       id: 5,
-  //       title: "Geometric Dreams",
-  //       image: "https://placehold.co/600x400/orange/white",
-  //       description: "Precision meets creativity",
-  //     },
-  //     {
-  //       id: 6,
-  //       title: "Cultural Fusion",
-  //       image: "https://placehold.co/600x400/orange/white",
-  //       description: "Blending traditional and modern elements",
-  //     },
-  //   ]);
+
 
   if (isLoading) return <Loader />;
 
@@ -98,13 +60,10 @@ function GalleryPage() {
                   alt={piece.title}
                   className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-101"
                 />
-                <div className="p-2 sm:p-4">
+                <div className="flex justify-between items-center p-2 sm:p-4">
                   <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
                     {piece.title}
                   </h3>
-                  {/* <p className="text-sm sm:text-base text-gray-600 mb-4">
-                    {piece.description}
-                  </p> */}
                   <button>
                     <Link
                       className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-blue-600 bg-opacity-80 rounded-lg text-white hover:bg-opacity-100 transition duration-300"
