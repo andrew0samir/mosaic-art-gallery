@@ -1,48 +1,68 @@
-import { useState } from "react";
+import { useEffect } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
+import { useDatabase } from "../context/DatabaseContext";
+import { DBServiceApi } from "../services/DBServiceApi";
+import Loader from "../ui/Loader";
 
 function GalleryPage() {
-  // Sample art pieces data - replace with your actual data
-  const [artPieces] = useState([
-    {
-      id: 1,
-      title: "Mosaic Harmony",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "A vibrant exploration of color and form",
-    },
-    {
-      id: 2,
-      title: "Urban Fragments",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Contemporary urban landscapes in mosaic",
-    },
-    {
-      id: 3,
-      title: "Natures Pattern",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Organic patterns inspired by nature",
-    },
-    {
-      id: 4,
-      title: "Abstract Flow",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Dynamic abstract composition",
-    },
-    {
-      id: 5,
-      title: "Geometric Dreams",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Precision meets creativity",
-    },
-    {
-      id: 6,
-      title: "Cultural Fusion",
-      image: "https://placehold.co/600x400/orange/white",
-      description: "Blending traditional and modern elements",
-    },
-  ]);
+  const { projects, isLoading, dispatch } = useDatabase();
+
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  async function loadProjects() {
+    try {
+      dispatch({ type: "LOADING" });
+      const projectsData = await DBServiceApi.getProjects();
+      dispatch({ type: "PROJECTS_LOADED", payload: projectsData });
+    } catch (error) {
+      dispatch({ type: "ERROR", payload: error.message });
+    }
+  }
+  //   // Sample art pieces data - replace with your actual data
+  //   const [artPieces] = useState([
+  //     {
+  //       id: 1,
+  //       title: "Mosaic Harmony",
+  //       image: "https://placehold.co/600x400/orange/white",
+  //       description: "A vibrant exploration of color and form",
+  //     },
+  //     {
+  //       id: 2,
+  //       title: "Urban Fragments",
+  //       image: "https://placehold.co/600x400/orange/white",
+  //       description: "Contemporary urban landscapes in mosaic",
+  //     },
+  //     {
+  //       id: 3,
+  //       title: "Natures Pattern",
+  //       image: "https://placehold.co/600x400/orange/white",
+  //       description: "Organic patterns inspired by nature",
+  //     },
+  //     {
+  //       id: 4,
+  //       title: "Abstract Flow",
+  //       image: "https://placehold.co/600x400/orange/white",
+  //       description: "Dynamic abstract composition",
+  //     },
+  //     {
+  //       id: 5,
+  //       title: "Geometric Dreams",
+  //       image: "https://placehold.co/600x400/orange/white",
+  //       description: "Precision meets creativity",
+  //     },
+  //     {
+  //       id: 6,
+  //       title: "Cultural Fusion",
+  //       image: "https://placehold.co/600x400/orange/white",
+  //       description: "Blending traditional and modern elements",
+  //     },
+  //   ]);
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
@@ -64,7 +84,7 @@ function GalleryPage() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {artPieces.map((piece, index) => (
+          {projects.map((piece, index) => (
             <motion.div
               key={piece.id}
               initial={{ opacity: 0, y: 20 }}
@@ -74,17 +94,17 @@ function GalleryPage() {
             >
               <div className="relative overflow-hidden rounded-xl bg-white p-3 sm:p-4 transition-all duration-300 hover:transform hover:scale-[1.01] hover:shadow-lg">
                 <img
-                  src={piece.image}
+                  src={piece.coverImageUrl}
                   alt={piece.title}
                   className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4 transition-transform duration-300 group-hover:scale-101"
                 />
                 <div className="p-2 sm:p-4">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
                     {piece.title}
                   </h3>
-                  <p className="text-sm sm:text-base text-gray-600 mb-4">
+                  {/* <p className="text-sm sm:text-base text-gray-600 mb-4">
                     {piece.description}
-                  </p>
+                  </p> */}
                   <button>
                     <Link
                       className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-blue-600 bg-opacity-80 rounded-lg text-white hover:bg-opacity-100 transition duration-300"

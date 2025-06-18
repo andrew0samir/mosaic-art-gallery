@@ -1,6 +1,6 @@
 import { createContext, useContext, useReducer } from "react";
 
-export const DatabaseContext = createContext();
+const DatabaseContext = createContext();
 
 const initialState = {
   isLoading: false,
@@ -9,7 +9,7 @@ const initialState = {
   currentProject: null,
 };
 
-export const databaseReducer = (state, action) => {
+const databaseReducer = (state, action) => {
   switch (action.type) {
     case "LOADING":
       return { ...state, isLoading: true, error: null };
@@ -41,7 +41,9 @@ export const databaseReducer = (state, action) => {
       return {
         ...state,
         isLoading: false,
-        projects: state.projects.filter((project) => project.id !== action.payload),
+        projects: state.projects.filter(
+          (project) => project.id !== action.payload
+        ),
         currentProject: null,
       };
     default:
@@ -49,7 +51,7 @@ export const databaseReducer = (state, action) => {
   }
 };
 
-export const DatabaseProvider = ({ children }) => {
+const DatabaseProvider = ({ children }) => {
   const [state, dispatch] = useReducer(databaseReducer, initialState);
 
   return (
@@ -59,10 +61,12 @@ export const DatabaseProvider = ({ children }) => {
   );
 };
 
-export const useDatabase = () => {
+const useDatabase = () => {
   const context = useContext(DatabaseContext);
   if (!context) {
     throw new Error("useDatabase must be used within a DatabaseProvider");
   }
   return context;
 };
+
+export { DatabaseProvider, useDatabase };

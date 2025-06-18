@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDatabase } from "../../context/DatabaseContext";
 import { DBServiceApi } from "../../services/DBServiceApi";
 import EditForm from "./EditForm";
+import Loader from "../../ui/Loader";
 
 function AdminDashboard() {
   const { projects, isLoading, dispatch } = useDatabase();
@@ -37,11 +38,7 @@ function AdminDashboard() {
     <div className="max-w-6xl mx-auto p-6">
       <h2 className="text-2xl font-bold mb-6 text-white">Project Management</h2>
 
-      {isLoading && (
-        <div className="flex justify-center my-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-        </div>
-      )}
+      {isLoading && <Loader />}
 
       {!isLoading && projects.length === 0 && (
         <div className="text-center text-gray-300 my-8">
