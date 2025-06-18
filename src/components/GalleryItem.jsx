@@ -9,6 +9,8 @@ function GalleryItem() {
   const navigate = useNavigate();
   const { projects, isLoading, dispatch } = useDatabase();
 
+  const project = projects.filter((project) => project.id == id);
+
   useEffect(() => {
     loadProjects();
   }, []);
@@ -27,32 +29,46 @@ function GalleryItem() {
 
   return (
     <div>
-      <div className="min-h-screen bg-gradient-to-br from-blue-100 via-blue-300 to-blue-100 flex items-center justify-center flex-col px-4 py-16 sm:py-20">
-        <div className="text-center backdrop-blur-lg rounded-xl p-8 sm:p-12 max-w-lg mx-auto">
-          <button
-            className="px-4 py-2 bg-blue-600 text-white rounded-xl cursor-pointer"
-            onClick={() => navigate(-1)}
-          >
-            &larr; Back
-          </button>
-          <h1 className="text-4xl sm:text-6xl font-bold text-gray-700 mb-4">
-            item name {id}
-          </h1>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {projects
-            .filter((project) => project.id == id)
-            .map((piece) => (
-              <div key={piece.id} className="group relative">
-                <div className="relative overflow-hidden rounded-xl bg-white bg-opacity-10 backdrop-blur-lg p-3 sm:p-4 transition-all duration-300">
-                  <img
-                    src={piece.coverImageUrl}
-                    alt={piece.title}
-                    className="w-full h-48 sm:h-64 lg:h-80 object-cover rounded-lg mb-3 sm:mb-4  duration-300 "
-                  />
+      <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4 flex items-center justify-center flex-col">
+        <div className="flex flex-col justify-center items-center max-w-6xl">
+          {project.map((piece) => (
+            <div key={piece.title}>
+              <div className="flex flex-col md:flex-row justify-start items-center mb-10 ">
+                <div className="">
+                  <button
+                    className="px-6 py-3 bg-neutral-600 hover:bg-neutral-500 text-white rounded-lg cursor-pointer transition-all duration-300"
+                    onClick={() => navigate(-1)}
+                  >
+                    &larr; Back To Gallery
+                  </button>
                 </div>
               </div>
-            ))}
+              <div>
+                <div className=" rounded-xl bg-white p-3 sm:p-4 transition-all duration-300 text-center mb-5">
+                  <h1 className="text-xl font-bold text-gray-900 mb-5 ">
+                    {piece.title}
+                  </h1>
+                  <div>
+                    <img
+                      src={piece.coverImageUrl}
+                      alt={piece.title}
+                      className="rounded-xl"
+                    />
+                  </div>
+                </div>
+                {piece.imageUrls.map((url, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col md:flex-row justify-center items-center box-border "
+                  >
+                    <div className="py-2">
+                      <img src={url} alt={url} className="rounded-xl" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
