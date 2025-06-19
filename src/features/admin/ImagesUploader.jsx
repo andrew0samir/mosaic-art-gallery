@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDatabase } from "../../context/DatabaseContext";
 import { DBServiceApi } from "../../services/DBServiceApi";
+import Swal from "sweetalert2";
 
 function ImagesUploader() {
   const { dispatch } = useDatabase();
@@ -10,19 +11,6 @@ function ImagesUploader() {
   const [coverImagePreview, setCoverImagePreview] = useState(null);
   const [projectImages, setProjectImages] = useState([]);
   const [projectImagesPreview, setProjectImagesPreview] = useState([]);
-  const [notification, setNotification] = useState({
-    show: false,
-    message: "",
-  });
-
-  useEffect(() => {
-    if (notification.show) {
-      const timer = setTimeout(() => {
-        setNotification({ show: false, message: "" });
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [notification.show]);
 
   // Cleanup preview URLs when component unmounts
   useEffect(() => {
@@ -125,12 +113,12 @@ function ImagesUploader() {
       // Create project in database
       await DBServiceApi.createNewProject(projectData, dispatch);
 
-      // Show success notification
-      setNotification({
-        show: true,
-        message: "Project uploaded successfully!",
+      // Show success allert
+      Swal.fire({
+        title: "Done!",
+        text: "Project uploaded successfully!",
+        icon: "success",
       });
-
       // Reset form
       resetForm();
     } catch (error) {
@@ -139,9 +127,10 @@ function ImagesUploader() {
         type: "ERROR",
         payload: error.message,
       });
-      setNotification({
-        show: true,
-        message: "Error uploading project. Please try again.",
+      Swal.fire({
+        title: "Sorry!",
+        text: "Error uploading project. Please try again.",
+        icon: "error",
       });
     } finally {
       setIsLoading(false);
@@ -160,20 +149,6 @@ function ImagesUploader() {
 
   return (
     <div className="max-w-2xl mx-auto p-6 bg-gray-800 rounded-xl shadow-2xl mt-10">
-      {notification.show && (
-        <div
-          className={`fixed top-4 right-4 p-4 rounded-lg shadow-lg transition-all duration-500 ${
-            notification.show ? "opacity-100" : "opacity-0"
-          } ${
-            notification.message.includes("Error")
-              ? "bg-red-500"
-              : "bg-green-500"
-          } text-white`}
-        >
-          {notification.message}
-        </div>
-      )}
-
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label
