@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BlogSection() {
   const [images] = useState([1, 2, 3]);
+  const navigate = useNavigate();
 
   return (
-    <section className="py-12 sm:py-20 px-4 ">
+    <section className="py-20 px-4 ">
       <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-12">
         Latest ArtWorks
       </h2>
@@ -16,14 +18,17 @@ function BlogSection() {
           >
             <img
               src={`splash2.jpg`}
-              alt={`Blog ${item}`}
+              alt={`art piece`}
               className="w-full h-40 sm:h-48 object-cover rounded-lg mb-4 group-hover:-translate-y-2 transition duration-500"
             />
             <div className="flex justify-between items-center mb-2 ">
               <h3 className="text-lg sm:text-xl font-semibold text-white ">
                 Art Piece Title
               </h3>
-              <button className="text-sm sm:text-base text-white group-hover:outline px-6 py-3 rounded-xl transition duration-500 cursor-pointer">
+              <button
+                onClick={() => navigate("/gallery")}
+                className="text-sm sm:text-base text-white group-hover:outline px-6 py-3 rounded-xl transition duration-500 cursor-pointer"
+              >
                 Read More &rarr;
               </button>
             </div>

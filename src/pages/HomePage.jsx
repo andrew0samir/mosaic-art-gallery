@@ -8,7 +8,7 @@ function HomePage() {
     <div className="min-h-screen  bg-linear-to-b from-cyan-600 via-sky-400 to-blue-300">
       <HeroSection />
 
-      <FeaturedSection />
+      {/* <FeaturedSection /> */}
 
       <BlogSection />
 

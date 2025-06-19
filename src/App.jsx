@@ -12,11 +12,13 @@ import AdminLogin from "./features/auth/AdminLogin";
 import Dashboard from "./features/admin/Dashboard";
 import AdminDashboard from "./features/admin/AdminDashboard";
 import { DatabaseProvider } from "./context/DatabaseContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <DatabaseProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="login" element={<AdminLogin />} />
           <Route

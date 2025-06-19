@@ -12,18 +12,17 @@ function GalleryItem() {
   const project = projects.filter((project) => project.id == id);
 
   useEffect(() => {
-    loadProjects();
-  }, []);
-
-  async function loadProjects() {
-    try {
-      dispatch({ type: "LOADING" });
-      const projectsData = await DBServiceApi.getProjects();
-      dispatch({ type: "PROJECTS_LOADED", payload: projectsData });
-    } catch (error) {
-      dispatch({ type: "ERROR", payload: error.message });
+    async function loadProjects() {
+      try {
+        dispatch({ type: "LOADING" });
+        const projectsData = await DBServiceApi.getProjects();
+        dispatch({ type: "PROJECTS_LOADED", payload: projectsData });
+      } catch (error) {
+        dispatch({ type: "ERROR", payload: error.message });
+      }
     }
-  }
+    loadProjects();
+  }, [dispatch]);
 
   if (isLoading) return <Loader />;
 
