@@ -59,9 +59,9 @@ function ContactPage() {
         </div>
 
         {/* Contact Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="flex sm:flex-row flex-col justify-center items-center max-w-7xl gap-6 ">
           {/* Contact Form */}
-          <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 hover:bg-opacity-20 transition duration-300">
+          <div className="bg-white rounded-xl p-8 w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-gray-800 mb-2">
@@ -73,7 +73,7 @@ function ContactPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-600 ring-1 ring-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Your name"
                   required
                 />
@@ -88,7 +88,7 @@ function ContactPage() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-600 ring-1 ring-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="your@email.com"
                   required
                 />
@@ -103,7 +103,7 @@ function ContactPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-600 ring-1 ring-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Your phone number"
                 />
               </div>
@@ -117,7 +117,7 @@ function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows="4"
-                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-600 ring-1 ring-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Your message"
                   required
                 ></textarea>
@@ -132,7 +132,7 @@ function ContactPage() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 w-full text-start">
             <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 hover:bg-opacity-20 transition duration-300">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Get in Touch
@@ -171,6 +171,7 @@ function ContactPage() {
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
