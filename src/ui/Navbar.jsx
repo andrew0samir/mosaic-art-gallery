@@ -43,7 +43,7 @@ function Navbar() {
             }  sm:bg-transparent lg:flex lg:relative lg:top-auto lg:flex-row lg:space-y-0 lg:space-x-8 lg:py-0`}
           >
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
                 `text-lg ${
                   isActive ? "underline underline-offset-4 " : ""
