@@ -5,29 +5,32 @@ import { Link } from "react-router-dom";
 import { useDatabase } from "../context/DatabaseContext";
 import { DBServiceApi } from "../services/DBServiceApi";
 import Loader from "../ui/Loader";
+import { Helmet } from "react-helmet";
 
 function GalleryPage() {
   const { projects, isLoading, dispatch } = useDatabase();
 
   useEffect(() => {
-    loadProjects();
-  }, []);
-
-  async function loadProjects() {
-    try {
-      dispatch({ type: "LOADING" });
-      const projectsData = await DBServiceApi.getProjects();
-      dispatch({ type: "PROJECTS_LOADED", payload: projectsData });
-    } catch (error) {
-      dispatch({ type: "ERROR", payload: error.message });
+    async function loadProjects() {
+      try {
+        dispatch({ type: "LOADING" });
+        const projectsData = await DBServiceApi.getProjects();
+        dispatch({ type: "PROJECTS_LOADED", payload: projectsData });
+      } catch (error) {
+        dispatch({ type: "ERROR", payload: error.message });
+      }
     }
-  }
 
+    loadProjects();
+  }, [dispatch]);
 
   if (isLoading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
+      <Helmet>
+        <title>Mosaic Art Gallery - Gallery</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto">
         {/* Gallery Header */}
         <motion.div

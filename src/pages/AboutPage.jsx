@@ -1,9 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
+import { Helmet } from "react-helmet";
 
 function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
+      <Helmet>
+        <title>Mosaic Art Gallery - About Us</title>
+      </Helmet>
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto mb-16 sm:mb-20">
         <motion.h1

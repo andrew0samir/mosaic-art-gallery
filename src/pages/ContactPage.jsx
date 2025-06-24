@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 
 function ContactPage() {
@@ -46,6 +47,9 @@ function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
+      <Helmet>
+        <title>Mosaic Art Gallery - Contact Us</title>
+      </Helmet>
       <div className="max-w-7xl mx-auto">
         {/* Contact Header */}
         <div className="text-center mb-16">
@@ -171,7 +175,6 @@ function ContactPage() {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
