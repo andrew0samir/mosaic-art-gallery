@@ -4,7 +4,10 @@ import { Helmet } from "react-helmet";
 
 function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
+    <div
+      className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4"
+      dir="rtl"
+    >
       <Helmet>
         <title>Mosaic Art Gallery - About Us</title>
       </Helmet>
@@ -15,7 +18,8 @@ function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold text-white text-center mb-6 sm:mb-8"
         >
-          Our Story
+          من نحن
+          {/* Our Story */}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -23,8 +27,9 @@ function AboutPage() {
           transition={{ delay: 0.2 }}
           className="text-lg sm:text-xl text-gray-100 text-center max-w-3xl mx-auto px-4"
         >
-          Discover the journey behind our mosaic artistry and the passion that
-          drives our creative process.
+          {/* Discover the journey behind our mosaic artistry and the passion that
+          drives our creative process. */}
+          فن الموزاييك هو حكايتي مع التفاصيل والصبر...
         </motion.p>
       </div>
 
@@ -39,16 +44,18 @@ function AboutPage() {
             className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 sm:p-8"
           >
             <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4 sm:mb-6">
-              Our Vision
+              {/* Our Vision */}
+              نبذة عن الفنان
             </h2>
             <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
-              We strive to create unique mosaic artworks that tell stories and
-              capture emotions through intricate patterns and vibrant colors.
+              أنا مينا ممدوح ، فنان مصري متخصص في فن الموزاييك اليدوي، بشتغل
+              بإيدي على قطع صغيرة من الزجاج والسيراميك وبحوّلها لصور مقدسة، وجوه
+              قديسين، وأعمال فنية بتعيش لسنين.
             </p>
-            <p className="text-sm sm:text-base text-gray-700">
+            {/* <p className="text-sm sm:text-base text-gray-700">
               Each piece is carefully crafted to bring beauty and inspiration to
               spaces, creating lasting impressions that resonate with viewers.
-            </p>
+            </p> */}
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -58,7 +65,7 @@ function AboutPage() {
           >
             <div className="absolute inset-0 bg-blue-600 rounded-xl transform rotate-3"></div>
             <img
-              src="https://placehold.co/600x400/orange/white"
+              src="https://res.cloudinary.com/dru0rz7ll/image/upload/v1751316633/artist_image2_gqbdqo.jpg"
               alt="Mosaic art vision"
               className="relative rounded-xl w-full h-[300px] sm:h-[400px] object-cover"
             />
@@ -75,7 +82,7 @@ function AboutPage() {
           >
             <div className="absolute inset-0 bg-blue-600 rounded-xl transform -rotate-3"></div>
             <img
-              src="https://placehold.co/600x400/orange/white"
+              src="https://res.cloudinary.com/dru0rz7ll/image/upload/v1751316634/mosiac_2_woi5c6.jpg"
               alt="Creative process"
               className="relative rounded-xl w-full h-[300px] sm:h-[400px] object-cover"
             />
@@ -87,15 +94,16 @@ function AboutPage() {
             className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 sm:p-8 order-1 lg:order-2"
           >
             <h2 className="text-2xl sm:text-3xl font-bold text-black mb-4 sm:mb-6">
-              Our Process
+              {/* Our Process */}
+              نبذة عن شغلي
             </h2>
             <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6">
-              From concept to creation, our artistic process involves meticulous
-              attention to detail and a deep understanding of mosaic techniques.
+              كل قطعة بشتغل عليها بحط فيها وقت، حب، وتفاصيل دقيقة بتخلّي كل عمل
+              مختلف وله روح خاصة.
             </p>
             <p className="text-sm sm:text-base text-gray-700">
-              We combine traditional methods with modern innovations to create
-              contemporary artworks that push the boundaries of mosaic art.
+              شغلي بيجمع بين التراث القبطي والفن الكلاسيكي، وبستخدم خامات عالية
+              الجودة بتتحمل الزمن.
             </p>
           </motion.div>
         </div>

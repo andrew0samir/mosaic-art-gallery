@@ -14,7 +14,7 @@ function HeroSection() {
       <div className="text-center max-w-[90%] sm:max-w-2xl mx-auto">
         <h1 className="text-3xl sm:text-5xl md:text-5xl font-bold text-white mb-4 sm:mb-8">
           {/* Mosaic Art Gallery */}
-          معرض أعمال المزاييك الفنية
+          معرض أعمال الموزاييك الفنية
         </h1>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center ">
           <button
