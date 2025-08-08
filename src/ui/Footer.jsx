@@ -14,34 +14,39 @@ function Footer() {
               Logo
             </Link>
             <p className="mt-4 text-blue-200">
-              Transforming spaces through the art of mosaic, one piece at a
-              time.
+              {/* Transforming spaces through the art of mosaic, one piece at a
+              time. */}
+              تحويل المساحات من خلال فن الموزايك ، قطعة واحدة في كل مرة.
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="text-center">
             <h3 className="text-lg font-semibold text-white mb-4">
-              Quick Links
+              {/* Quick Links */}
+              لينكات سريعة
             </h3>
             <div className="space-y-2">
               <Link
                 to="/gallery"
                 className="block text-blue-200 hover:text-blue-100 transition duration-300"
               >
-                Gallery
+                {/* Gallery */}
+                المعرض
               </Link>
               <Link
                 to="/about"
                 className="block text-blue-200 hover:text-blue-100 transition duration-300"
               >
-                About
+                {/* About */}
+                قصتنا
               </Link>
               <Link
                 to="/contact"
                 className="block text-blue-200 hover:text-blue-100 transition duration-300"
               >
-                Contact
+                {/* Contact */}
+                للتواصل
               </Link>
             </div>
           </div>
@@ -49,7 +54,8 @@ function Footer() {
           {/* Social Links */}
           <div className="text-center md:text-right">
             <h3 className="text-lg font-semibold text-white mb-4">
-              Connect With Us
+              {/* Connect With Us */}
+              تواصل معنا علي السوشايل ميديا
             </h3>
             <div className="flex justify-center md:justify-end space-x-4">
               <a
@@ -102,7 +108,7 @@ function Footer() {
         <div className="mt-8 pt-8 border-t border-white border-opacity-10 text-center">
           <p className="text-blue-200">
             &copy; {new Date().getFullYear()} Mosaic Art{" "}
-            <Link to="admin">Gallery</Link> . All rights reserved.
+            <Link to="admin">Gallery</Link> .<span> All rights reserved. </span>
           </p>
         </div>
       </div>
