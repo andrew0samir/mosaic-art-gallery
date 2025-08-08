@@ -20,7 +20,7 @@ function ContactPage() {
     const formData = new FormData(event.target);
 
     // Remeber to change this with the key
-    formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+    formData.append("access_key", "1f0c2fc9-a1cb-41e6-98ae-435b0b18e5eb");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -38,8 +38,8 @@ function ContactPage() {
       setFormData({ name: "", email: "", phone: "", message: "" });
       console.log("Success", res);
       Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
+        title: "Thanks!",
+        text: "Your message sent successfully",
         icon: "success",
       });
     }

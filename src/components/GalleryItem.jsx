@@ -38,7 +38,8 @@ function GalleryItem() {
                     className="px-6 py-3 bg-neutral-600 hover:bg-neutral-500 text-white rounded-lg cursor-pointer transition-all duration-300"
                     onClick={() => navigate(-1)}
                   >
-                    &larr; Back To Gallery
+                    {/* &larr; Back To Gallery */}
+                    الرجوع للمعرض
                   </button>
                 </div>
               </div>
