@@ -51,7 +51,8 @@ function Navbar() {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {/* Home */}
+              الرئيسية
             </NavLink>
             <NavLink
               to="/about"
@@ -62,7 +63,8 @@ function Navbar() {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              {/* About */}
+              قصتنا
             </NavLink>
             <NavLink
               to="/gallery"
@@ -73,7 +75,8 @@ function Navbar() {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Gallery
+              {/* Gallery */}
+              المعرض
             </NavLink>
             <NavLink
               to="/contact"
@@ -84,7 +87,8 @@ function Navbar() {
               }
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {/* Contact */}
+              تواصل معنا
             </NavLink>
           </div>
         </nav>
