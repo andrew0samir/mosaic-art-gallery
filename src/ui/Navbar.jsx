@@ -38,7 +38,7 @@ function Navbar() {
 
           {/* Navigation Links */}
           <div
-            className={`absolute top-full left-0 right-0 flex-col items-center space-y-4 space-x-0 text-white py-4 backdrop-blur-xl ${
+            className={`absolute top-full left-0 right-0 flex-col items-center space-y-4 space-x-0 text-white py-4 backdrop-blur-xl bg-sky-600 ${
               isMenuOpen ? "flex" : "hidden"
             }  sm:bg-transparent lg:flex lg:relative lg:top-auto lg:flex-row lg:space-y-0 lg:space-x-8 lg:py-0`}
           >

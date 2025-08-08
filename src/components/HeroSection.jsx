@@ -10,7 +10,7 @@ function HeroSection() {
   ];
 
   return (
-    <section className="relative h-dvh flex items-center justify-center px-4 py-16  sm:py-0" dir="rtl">
+    <section className="relative h-dvh flex items-center justify-center px-4 py-16 sm:py-0 " dir="rtl" >
       <div className="text-center max-w-[90%] sm:max-w-2xl mx-auto">
         <h1 className="text-3xl sm:text-5xl md:text-5xl font-bold text-white mb-4 sm:mb-8">
           {/* Mosaic Art Gallery */}

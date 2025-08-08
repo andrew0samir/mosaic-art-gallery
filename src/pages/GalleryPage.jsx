@@ -27,7 +27,10 @@ function GalleryPage() {
   if (isLoading) return <Loader />;
 
   return (
-    <div className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4">
+    <div
+      className="min-h-screen bg-gradient-to-t from-sky-500 via-cyan-500 to-blue-500 py-30 px-4"
+      dir="rtl"
+    >
       <Helmet>
         <title>Mosaic Art Gallery - Gallery</title>
       </Helmet>
@@ -39,11 +42,14 @@ function GalleryPage() {
           className="text-center mb-12 sm:mb-16"
         >
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-8">
-            Our Gallery
+            {/* Our Gallery */}
+            المعرض
           </h1>
           <p className="text-lg sm:text-xl text-white max-w-3xl mx-auto px-4">
-            Explore our collection of unique mosaic artworks, each telling its
-            own story through color and form.
+            {/* Explore our collection of unique mosaic artworks, each telling its
+            own story through color and form. */}
+            استكشف مجموعتنا من أعمال الموزايك الفنية الفريدة، حيث يروي كل منها
+            قصته الخاصة من خلال اللون والشكل.
           </p>
         </motion.div>
 
@@ -72,7 +78,8 @@ function GalleryPage() {
                       className="w-full sm:w-auto px-4 sm:px-6 py-2 bg-blue-600 bg-opacity-80 rounded-lg text-white hover:bg-opacity-100 transition duration-300"
                       to={`${piece.id}`}
                     >
-                      View Details
+                      {/* View Details */}
+                      انظر التفاصيل
                     </Link>
                   </button>
                 </div>

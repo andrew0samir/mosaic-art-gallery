@@ -54,16 +54,18 @@ function ContactPage() {
         {/* Contact Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-8">
-            Contact Me
+            {/* Contact Me */}
+            تواصل معنا
           </h1>
           <p className="text-xl text-white max-w-3xl mx-auto">
-            Get in touch to discuss commissions, collaborations, or just to say
-            hello.
+            {/* Get in touch to discuss commissions, collaborations, or just to say
+            hello. */}
+            تواصل معنا لطلب قطعتك الفنية الخاصة
           </p>
         </div>
 
         {/* Contact Grid */}
-        <div className="flex sm:flex-row flex-col justify-center items-center max-w-7xl gap-6 ">
+        <div className="flex sm:flex-row flex-col justify-center items-center max-w-5xl mx-auto gap-6 ">
           {/* Contact Form */}
           <div className="bg-white rounded-xl p-8 w-full">
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -120,7 +122,7 @@ function ContactPage() {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  rows="4"
+                  rows="5"
                   className="w-full px-4 py-2 bg-white bg-opacity-20 rounded-lg text-gray-800 placeholder-gray-600 ring-1 ring-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Your message"
                   required
@@ -128,7 +130,7 @@ function ContactPage() {
               </div>
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-blue-600 bg-opacity-80 rounded-lg text-white hover:bg-opacity-100 transition duration-300"
+                className="w-full px-6 py-3 bg-blue-600 bg-opacity-80 rounded-lg text-white hover:bg-opacity-100 transition duration-300 cursor-pointer"
               >
                 Send Message
               </button>
@@ -136,22 +138,24 @@ function ContactPage() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 w-full text-start">
+          {/* <div className="space-y-6 w-full text-start">
             <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 hover:bg-opacity-20 transition duration-300">
               <h2 className="text-3xl font-bold text-gray-800 mb-6">
                 Get in Touch
+                للتواصل معنا
               </h2>
               <div className="space-y-4">
                 <p className="text-gray-500">
-                  <span className="font-semibold">Email:</span>{" "}
+                  <span className="font-semibold">Email : </span>
                   artist@example.com
                 </p>
                 <p className="text-gray-500">
-                  <span className="font-semibold">Phone:</span> +1 234 567 890
+                  <span className="font-semibold">Phone : </span> (+2)
+                  01225100636
                 </p>
                 <p className="text-gray-500">
-                  <span className="font-semibold">Studio:</span> 123 Art Street,
-                  Creative District
+                  <span className="font-semibold">Studio : </span> 123 Art
+                  Street, Creative District
                 </p>
               </div>
             </div>
@@ -174,7 +178,7 @@ function ContactPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
